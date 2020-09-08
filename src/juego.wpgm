@@ -28,6 +28,8 @@ program correrJuego {
 	game.addVisual(jerry)
 	game.onTick(1000, "mover aleatoriamente", { aleatorio.nuevaPosicion() })
 	
+//	SPIKE
+	game.addVisual(spike)
 	
 //	colisiones
 	game.onCollideDo(tom, {visualColisionado => visualColisionado.chocasteConTom()})

@@ -2,14 +2,18 @@ import wollok.game.*
 
 object tom {
 	var position = game.at(2,2)
-	
+	var imagen = "tom.png"
 	method position() = position
 	
 	method moverseA(nuevaPosicion){
 		position = nuevaPosicion
 	}
 	
-	method image() = "tom.png"
+	method image() = imagen
+	
+	method perdiste() {
+		imagen = "tom-triste.png"
+	}
 }
 
 object jerry {
@@ -44,4 +48,15 @@ object cazado {
 	method posicion() = tom.position().left(1)
 }
 
+object spike { 
+	method image() = "spike.png"
+	
+	method position() = game.at(7,5)
+	
+	method chocasteConTom() {
+		tom.perdiste()
+		game.schedule(5000, { game.stop() })
+	}
+
+}
 
