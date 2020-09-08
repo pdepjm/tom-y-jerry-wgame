@@ -1,0 +1,28 @@
+import wollok.game.*
+import personajes.*
+
+program correrJuego {
+//	 configuro juego
+	game.width(10)
+	game.height(10)
+	
+//	 agrego visuales
+	game.addVisual(tom)
+	
+//	 configuro teclado
+	keyboard.up().onPressDo({ 
+		tom.moverseA(tom.position().up(1))
+	})
+	keyboard.down().onPressDo({ 
+		tom.moverseA(tom.position().down(1))
+	})
+	keyboard.left().onPressDo({
+		tom.moverseA(tom.position().left(1))
+	})
+	keyboard.right().onPressDo({
+		tom.moverseA(tom.position().right(1))
+	})
+	
+//	 inicio juego
+	game.start()
+}
