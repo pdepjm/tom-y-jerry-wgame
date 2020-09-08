@@ -62,3 +62,9 @@ object spike {
 
 }
 
+object carpincho {
+	method image() = "carpincho.png"
+	
+	method position() = game.at (1,6)
+}
+

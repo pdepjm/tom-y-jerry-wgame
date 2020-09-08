@@ -27,7 +27,10 @@ program correrJuego {
 //   agrego visuales
 	game.addVisual(jerry)
 	game.onTick(1000, "mover aleatoriamente", { aleatorio.nuevaPosicion() })
-	
+//	CARPINCHO
+	game.addVisual(carpincho)
+
+
 //	SPIKE
 	game.addVisual(spike)
 	
