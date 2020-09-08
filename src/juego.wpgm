@@ -5,7 +5,7 @@ program correrJuego {
 //	 configuro juego
 	game.width(10)
 	game.height(10)
-	
+//	TOM
 //	 agrego visuales
 	game.addVisual(tom)
 	
@@ -23,6 +23,15 @@ program correrJuego {
 		tom.moverseA(tom.position().right(1))
 	})
 	
+//	JERRY
+//   agrego visuales
+	game.addVisual(jerry)
+	game.onTick(1000, "mover aleatoriamente", { aleatorio.nuevaPosicion() })
+	
+	
+//	colisiones
+	game.onCollideDo(tom, {visualColisionado => visualColisionado.chocasteConTom()})
+
 //	 inicio juego
 	game.start()
 }
