@@ -54,6 +54,8 @@ object spike {
 	method position() = game.at(7,5)
 	
 	method chocasteConTom() {
+//		terminar el juego
+		game.say(jerry,"jaja perdiste gil")
 		tom.perdiste()
 		game.schedule(5000, { game.stop() })
 	}
