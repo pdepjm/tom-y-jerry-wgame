@@ -1,42 +1,5 @@
-import wollok.game.*
-import personajes.*
+import tomYJerry.*
 
-program correrJuego {
-//	 configuro juego
-	game.width(10)
-	game.height(10)
-//	TOM
-//	 agrego visuales
-	game.addVisual(tom)
-	
-//	 configuro teclado
-	keyboard.up().onPressDo({ 
-		tom.moverseA(tom.position().up(1))
-	})
-	keyboard.down().onPressDo({ 
-		tom.moverseA(tom.position().down(1))
-	})
-	keyboard.left().onPressDo({
-		tom.moverseA(tom.position().left(1))
-	})
-	keyboard.right().onPressDo({
-		tom.moverseA(tom.position().right(1))
-	})
-	
-//	JERRY
-//   agrego visuales
-	game.addVisual(jerry)
-	game.onTick(1000, "mover aleatoriamente", { aleatorio.nuevaPosicion() })
-//	CARPINCHO
-	game.addVisual(carpincho)
-
-
-//	SPIKE
-	game.addVisual(spike)
-	
-//	colisiones
-	game.onCollideDo(tom, {visualColisionado => visualColisionado.chocasteConTom()})
-
-//	 inicio juego
-	game.start()
+program tomYJerry {
+	tomYJerry.iniciar()
 }
